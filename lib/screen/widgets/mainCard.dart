@@ -1,28 +1,37 @@
+// import 'dart:math';
 import 'dart:ui';
-
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:weatherapp/screen/widgets/searchField.dart';
+import 'package:weatherapp/services/weather_model.dart';
+import 'package:weatherapp/services/weather_service.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+  MainCard(
+      {super.key,
+      required this.location,
+      required this.condition,
+      required this.country,
+      required this.date,
+      required this.img,
+      required this.tempC});
+
+  var location, tempC, condition, country, date, img;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: 300,
             decoration: BoxDecoration(
-              border:
-                  Border.all(color: whiteOp2(), width: 1.5),
+              border: Border.all(color: whiteOp2(), width: 1.5),
               gradient: LinearGradient(
-                colors: [
-                 whiteOp2(),
-                 whiteOp2()
-                ],
+                colors: [whiteOp2(), whiteOp2()],
                 // stops: const [1.0, 1.0],
               ),
               borderRadius: BorderRadius.circular(20),
@@ -33,22 +42,24 @@ class MainCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
-                        children:  [
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(
-                            "Place",
+                            location,
                             style: TextStyle(fontSize: 38, color: white()),
                           ),
                           Text(
-                            "country",
+                            country,
                             style: TextStyle(fontSize: 26, color: white()),
                           ),
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 200.0, top: 5),
-                        child: Image.asset('assets/images/cloud.png'),
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Image.asset('assets/images/mist.png'),
                       ),
                     ],
                   ),
@@ -56,40 +67,45 @@ class MainCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 3.0),
                     child: Wrap(
-                      children:  [
+                      children: [
                         Text(
-                          "28",
-                          style: TextStyle(fontSize: 80, color:white()),
+                          tempC.toString(),
+                          style: TextStyle(fontSize: 80, color: white()),
                         ),
                         Padding(
-                          padding:const EdgeInsets.only(top: 17.0),
+                          padding: const EdgeInsets.only(top: 17.0),
                           child: Text(
                             '°C',
                             style: TextStyle(
                                 fontSize: 30,
                                 color: white(),
-                                fontFeatures: const[FontFeature.superscripts()]),
+                                fontFeatures: const [
+                                  FontFeature.superscripts()
+                                ]),
                           ),
                         ),
                       ],
                     ),
                   ),
                   kheight,
-                   Text(
-                    'Sunny',
+                  Text(
+                    condition,
                     style: TextStyle(fontSize: 20, color: white()),
                   ),
                   kheight20,
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '22-03-2023',
-                        style: TextStyle(fontSize: 18, color:white()),
-                      ),
-                      kwidth200,
-                      Text(
-                        'day',
+                        DateFormat("y MMM dd ").format(date),
                         style: TextStyle(fontSize: 18, color: white()),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: Text(
+                          DateFormat("hh:mm a ").format(date),
+                          style: TextStyle(fontSize: 18, color: white()),
+                        ),
                       ),
                     ],
                   ),

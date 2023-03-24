@@ -19,7 +19,7 @@ class MiddleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 135,
