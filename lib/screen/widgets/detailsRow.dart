@@ -16,52 +16,49 @@ class DetailsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Column(
       children: [
-        Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              title,
-              style: TextStyle(color: white70(), fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(color: white70(), fontSize: 16),
+                  ),
+                  kheight,
+                  Text(
+                    data,
+                    style: TextStyle(color: white(), fontSize: 16),
+                  ),
+                ],
+              ),
             ),
-            kheight,
-            Text(
-              data,
-              style: TextStyle(color: white(), fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.only(left: 28.0, right: 20),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title2,
+                    style: TextStyle(color: white70(), fontSize: 16),
+                  ),
+                  kheight,
+                  Text(
+                    data2,
+                    style: TextStyle(color: white(), fontSize: 16),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              title2,
-              style: TextStyle(color: white70(), fontSize: 16),
-            ),
-            kheight,
-            Text(
-              data2,
-              style: TextStyle(color: white(), fontSize: 16),
-            ),
-          ],
-        ),
-        // Column(
-        //   children: [
-        //     Text(
-        //       title3,
-        //       style: TextStyle(color: white70(), fontSize: 16),
-        //     ),
-        //     Text(
-        //       data3,
-        //       style: TextStyle(color: white(), fontSize: 16),
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }

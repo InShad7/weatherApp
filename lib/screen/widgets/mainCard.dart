@@ -2,12 +2,11 @@
 import 'dart:ui';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/screen/widgets/searchField.dart';
-import 'package:weatherapp/services/weather_model.dart';
-import 'package:weatherapp/services/weather_service.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class MainCard extends StatelessWidget {
+  IconData? myIcon;
+
   MainCard(
       {super.key,
       required this.location,
@@ -15,9 +14,11 @@ class MainCard extends StatelessWidget {
       required this.country,
       required this.date,
       required this.img,
-      required this.tempC});
+      required this.tempC,
+      required this.isDay,
+      required this.myIcon});
 
-  var location, tempC, condition, country, date, img;
+  var location, tempC, condition, country, date, img, isDay;
 
   @override
   Widget build(BuildContext context) {
@@ -44,23 +45,35 @@ class MainCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            location,
-                            style: TextStyle(fontSize: 38, color: white()),
-                          ),
-                          Text(
-                            country,
-                            style: TextStyle(fontSize: 26, color: white()),
-                          ),
-                        ],
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              location,
+                              style: TextStyle(
+                                fontSize: 33,
+                                fontWeight: FontWeight.w500,
+                                color: white(),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Text(
+                              country,
+                              style: TextStyle(fontSize: 26, color: white()),
+                            ),
+                          ],
+                        ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
-                        child: Image.asset('assets/images/mist.png'),
-                      ),
+                          padding: const EdgeInsets.only(right: 10.0),
+                          child: Icon(
+                            myIcon,
+                            size: 60,
+                            color: Colors.white,
+                          )
+                          //  Image.asset('assets/images/mist.png'),
+                          ),
                     ],
                   ),
                   kheight,
@@ -70,7 +83,10 @@ class MainCard extends StatelessWidget {
                       children: [
                         Text(
                           tempC.toString(),
-                          style: TextStyle(fontSize: 80, color: white()),
+                          style: TextStyle(
+                              fontSize: 80,
+                              fontWeight: FontWeight.w500,
+                              color: white()),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 17.0),
@@ -101,9 +117,10 @@ class MainCard extends StatelessWidget {
                         style: TextStyle(fontSize: 18, color: white()),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
+                        padding: const EdgeInsets.only(right: 18.0),
                         child: Text(
-                          DateFormat("hh:mm a ").format(date),
+                          isDay,
+                          // DateFormat("hh:mm a ").format(date),
                           style: TextStyle(fontSize: 18, color: white()),
                         ),
                       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weatherapp/controller/bloc/home_controller_bloc.dart';
+import 'package:weatherapp/controller/home_controller/home_controller_bloc.dart';
 import 'package:weatherapp/screen/home.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const Home(),
+        home:  Home(),
       ),
     );
   }
