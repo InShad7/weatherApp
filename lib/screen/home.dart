@@ -16,14 +16,12 @@ import 'package:weatherapp/utils/utils.dart';
 WeatherService weatherService = WeatherService();
 Weather weather = Weather();
 
+double? mheight;
+double? mwidth;
+
 class Home extends StatelessWidget {
   Home({super.key});
 
-//   @override
-//   State<Home> createState() => _HomeState();
-// }
-
-// class _HomeState extends State<Home> {
   var wind,
       humidity,
       cloud,
@@ -41,13 +39,6 @@ class Home extends StatelessWidget {
   // DateTime date = DateTime.now();
   DateTime lastUpdate = DateTime.now();
   bool isLoading = false;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-
-  //   getData();
-  // }
 
   Future getData(context) async {
     if (textController.text.isEmpty) {
@@ -85,7 +76,10 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mheight = MediaQuery.of(context).size.height;
+    mwidth = MediaQuery.of(context).size.width;
     DateTime date = DateTime.now();
+    
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<HomeControllerBloc>(context).add(InitialWeather());
     });
@@ -93,12 +87,13 @@ class Home extends StatelessWidget {
       builder: (context, state) {
         // DateTime date = DateTime.now();
         // date = DateTime.parse(state.weatherData.localTime);
+        // log(state.weatherData.localTime);
         return Scaffold(
             appBar: AppBar(
               elevation: 0,
-              title: const Text(
+              title: Text(
                 'Today\'s Weather',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: mheight! / 38),
               ),
               centerTitle: true,
               actions: [
@@ -110,7 +105,10 @@ class Home extends StatelessWidget {
                       // weather = await weatherService.getWeather('kochi');
                       await getData(context);
                     },
-                    icon: const Icon(Icons.refresh_rounded))
+                    icon: Icon(
+                      Icons.refresh_rounded,
+                      size: mheight! / 33,
+                    ))
               ],
               backgroundColor: state.weatherData.isDay == 1 ? blue() : night(),
             ),

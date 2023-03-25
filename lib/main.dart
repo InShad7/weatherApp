@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeControllerBloc(),
       child: MaterialApp(
-        title: 'weather demo',
+        title: 'weather App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home:  Home(),
+        home: Home(),
       ),
     );
   }

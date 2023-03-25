@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/screen/home.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class DetailsRow extends StatelessWidget {
@@ -17,47 +18,47 @@ class DetailsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      // crossAxisAlignment: CrossAxisAlignment.stretch,
+      // mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(color: white70(), fontSize: 16),
-                  ),
-                  kheight,
-                  Text(
-                    data,
-                    style: TextStyle(color: white(), fontSize: 16),
-                  ),
-                ],
+        Padding(
+          padding: const EdgeInsets.all(8.5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(color: white70(), fontSize: mheight! / 65),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 28.0, right: 20),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title2,
-                    style: TextStyle(color: white70(), fontSize: 16),
-                  ),
-                  kheight,
-                  Text(
-                    data2,
-                    style: TextStyle(color: white(), fontSize: 16),
-                  ),
-                ],
+              kheight,
+              Text(
+                title2,
+                style: TextStyle(color: white70(), fontSize: mheight! / 65),
               ),
-            ),
-          ],
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: mwidth! / 15),
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                data,
+                style: TextStyle(color: white(), fontSize: mheight! / 65),
+              ),
+              kheight20,
+              Padding(
+                padding: EdgeInsets.only(left: mwidth! / 2.01),
+                child: Text(
+                  data2,
+                  style: TextStyle(color: white(), fontSize: mheight! / 65),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

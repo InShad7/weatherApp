@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/screen/home.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class MiddleCard extends StatelessWidget {
@@ -19,12 +20,13 @@ class MiddleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+      padding: EdgeInsets.only(
+          top: mheight! / 90, left: mwidth! / 22, right: mwidth! / 22),
       child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 135,
+        width: mwidth,
+        height: mheight! / 7.5,
         decoration: BoxDecoration(
-          border: Border.all(color: whiteOp2(), width: 1.5),
+          border: Border.all(color: whiteOp2(), width: mwidth! / 200),
           gradient: LinearGradient(
             colors: [whiteOp2(), whiteOp2()],
             // stops: const [1.0, 1.0],
@@ -32,15 +34,15 @@ class MiddleCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
+          padding: EdgeInsets.only(top: mheight! / 90),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: mwidth! / 28),
                 child: Text(
                   heading,
-                  style: TextStyle(color: white70()),
+                  style: TextStyle(color: white70(), fontSize: mheight! / 65),
                 ),
               ),
               kheight,
@@ -51,13 +53,14 @@ class MiddleCard extends StatelessWidget {
                     children: [
                       Icon(
                         icon1,
-                        size: 35,
+                        size: mheight! / 28,
                         color: white(),
                       ),
                       kheight,
                       Text(
                         title1,
-                        style: TextStyle(color: white(), fontSize: 18),
+                        style:
+                            TextStyle(color: white(), fontSize: mheight! / 55),
                       ),
                     ],
                   ),
@@ -65,13 +68,14 @@ class MiddleCard extends StatelessWidget {
                     children: [
                       Icon(
                         icon2,
-                        size: 35,
+                        size: mheight! / 28,
                         color: white(),
                       ),
                       kheight,
                       Text(
                         title2,
-                        style: TextStyle(color: white(), fontSize: 18),
+                        style:
+                            TextStyle(color: white(), fontSize: mheight! / 55),
                       ),
                     ],
                   ),
@@ -79,13 +83,14 @@ class MiddleCard extends StatelessWidget {
                     children: [
                       Icon(
                         icon3,
-                        size: 35,
+                        size: mheight! / 28,
                         color: white(),
                       ),
                       kheight,
                       Text(
                         title3,
-                        style: TextStyle(color: white(), fontSize: 18),
+                        style:
+                            TextStyle(color: white(), fontSize: mheight! / 55),
                       ),
                     ],
                   )

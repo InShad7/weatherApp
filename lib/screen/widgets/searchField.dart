@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/controller/home_controller/home_controller_bloc.dart';
+import 'package:weatherapp/screen/home.dart';
 import 'package:weatherapp/screen/widgets/debouncer.dart';
 import 'package:weatherapp/utils/utils.dart';
 
@@ -11,11 +12,6 @@ class SearchField extends StatelessWidget {
 
   SearchField({super.key, required this.weatherFun});
 
-//   @override
-//   State<SearchField> createState() => _SearchFieldState();
-// }
-
-// class _SearchFieldState extends State<SearchField> {
   final _debouncer = Debouncer(milliseconds: 1000);
 
   @override
@@ -26,7 +22,7 @@ class SearchField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Container(
-        height: 44,
+        height: mheight! / 22,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -46,9 +42,12 @@ class SearchField extends StatelessWidget {
               ),
               contentPadding: const EdgeInsets.all(5),
               hintText: 'Search by Location . . .',
-              icon: const Icon(Icons.search_rounded),
+              icon: Icon(
+                Icons.search_rounded,
+                size: mheight! / 37,
+              ),
               hintStyle: TextStyle(
-                fontSize: 18,
+                fontSize: mheight! / 54,
                 color: grey(),
               ),
             ),

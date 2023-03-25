@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:weatherapp/screen/home.dart';
 import 'package:weatherapp/screen/widgets/detailsRow.dart';
 import 'package:weatherapp/screen/widgets/mainCard.dart';
 import 'package:weatherapp/screen/widgets/searchField.dart';
@@ -50,12 +51,13 @@ class DetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+      padding: EdgeInsets.only(
+          top: mheight! / 90, left: mwidth! / 22, right: mwidth! / 22),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 225,
+        height: mheight! / 3.9,
         decoration: BoxDecoration(
-          border: Border.all(color: whiteOp2(), width: 1.5),
+          border: Border.all(color: whiteOp2(), width: mwidth! / 200),
           gradient: LinearGradient(
             colors: [whiteOp2(), whiteOp2()],
             // stops: const [1.0, 1.0],
