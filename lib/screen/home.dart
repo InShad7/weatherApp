@@ -52,26 +52,6 @@ class Home extends StatelessWidget {
       log(textController.toString());
     }
     print(textController.text);
-
-    // setState(() {
-    //   wind = weather.windKph;
-    //   humidity = weather.humidity;
-    //   cloud = weather.cloud;
-    //   DateTime date = DateTime.parse(weather.localTime);
-    //   precipitation = weather.precipitation;
-    //   pressure = weather.pressure;
-    //   uv = weather.uv;
-    //   windDirection = weather.windDirection;
-    //   visibility = weather.visibility;
-    //   lastUpdate = DateTime.parse(weather.lastUpdate);
-    //   name = weather.name;
-    //   country = weather.country;
-    //   condition = weather.condition;
-    //   tempC = weather.tempeC;
-    //   img = weather.condition;
-    //   isDay = weather.isDay;
-    //   isLoading = false;
-    // });
   }
 
   @override
@@ -79,7 +59,7 @@ class Home extends StatelessWidget {
     mheight = MediaQuery.of(context).size.height;
     mwidth = MediaQuery.of(context).size.width;
     DateTime date = DateTime.now();
-    
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<HomeControllerBloc>(context).add(InitialWeather());
     });
@@ -87,6 +67,8 @@ class Home extends StatelessWidget {
       builder: (context, state) {
         // DateTime date = DateTime.now();
         // date = DateTime.parse(state.weatherData.localTime);
+        late String mdate = state.weatherData.localTime;
+        log(mdate);
         // log(state.weatherData.localTime);
         return Scaffold(
             appBar: AppBar(
@@ -124,7 +106,7 @@ class Home extends StatelessWidget {
                               '${state.weatherData.name.toString()}, ${state.weatherData.region}',
                           condition: state.weatherData.condition.toString(),
                           country: state.weatherData.country.toString(),
-                          date: DateTime.parse(date.toString()),
+                          date: mdate,
                           img: state.weatherData.condition,
                           tempC: state.weatherData.tempeC,
                           isDay: state.weatherData.isDay == 1 ? 'DAY' : 'Night',
@@ -144,7 +126,7 @@ class Home extends StatelessWidget {
                           icon1: Icons.wb_sunny_outlined,
                           title1: '6:27 AM',
                           icon2: Icons.schedule,
-                          title2: DateFormat("hh:mm a ").format(date),
+                          title2: mdate,
                           icon3: Icons.nights_stay,
                           title3: '6:35 PM',
                         ),
