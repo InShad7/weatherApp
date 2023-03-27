@@ -18,6 +18,7 @@ getIcon(val) {
     case 'Light rain':
     case 'Moderate rain at times':
     case 'Heavy rain at times':
+    case 'Moderate or heavy rain with thunder':
       return Icons.cloudy_snowing;
     case 'Patchy snow possible':
     case 'Patchy sleet possible':
