@@ -116,7 +116,7 @@ class MainCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        DateFormat("y MMM dd ").format(date),
+                        date,
                         style:
                             TextStyle(fontSize: mheight! / 46, color: white()),
                       ),
