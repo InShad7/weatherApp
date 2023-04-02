@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+
 class Weather {
   final String name;
   final String region;
