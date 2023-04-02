@@ -52,26 +52,6 @@ class Home extends StatelessWidget {
       log(textController.toString());
     }
     print(textController.text);
-
-    // setState(() {
-    //   wind = weather.windKph;
-    //   humidity = weather.humidity;
-    //   cloud = weather.cloud;
-    //   DateTime date = DateTime.parse(weather.localTime);
-    //   precipitation = weather.precipitation;
-    //   pressure = weather.pressure;
-    //   uv = weather.uv;
-    //   windDirection = weather.windDirection;
-    //   visibility = weather.visibility;
-    //   lastUpdate = DateTime.parse(weather.lastUpdate);
-    //   name = weather.name;
-    //   country = weather.country;
-    //   condition = weather.condition;
-    //   tempC = weather.tempeC;
-    //   img = weather.condition;
-    //   isDay = weather.isDay;
-    //   isLoading = false;
-    // });
   }
 
   @override
