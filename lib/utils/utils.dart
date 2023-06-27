@@ -11,11 +11,11 @@ Color whiteOp2() {
   return Colors.white.withOpacity(0.2);
 }
 
-Color white() => Colors.white;
-Color white70() => Colors.white70;
-Color blue() => Colors.blue;
-Color night() => const Color.fromARGB(223, 1, 21, 56);
-Color grey() => Colors.grey;
+Color white = Colors.white;
+Color white70 = Colors.white70;
+Color blue = Colors.blue;
+Color night = const Color.fromARGB(223, 1, 21, 56);
+Color grey = Colors.grey;
 
 
 

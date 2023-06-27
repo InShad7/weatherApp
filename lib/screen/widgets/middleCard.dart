@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/screen/home.dart';
+import 'package:weatherapp/controller/controller.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class MiddleCard extends StatelessWidget {
@@ -42,7 +42,7 @@ class MiddleCard extends StatelessWidget {
                 padding: EdgeInsets.only(left: mwidth! / 28),
                 child: Text(
                   heading,
-                  style: TextStyle(color: white70(), fontSize: mheight! / 65),
+                  style: TextStyle(color: white70, fontSize: mheight! / 65),
                 ),
               ),
               kheight,
@@ -54,13 +54,13 @@ class MiddleCard extends StatelessWidget {
                       Icon(
                         icon1,
                         size: mheight! / 28,
-                        color: white(),
+                        color: white,
                       ),
                       kheight,
                       Text(
                         title1,
                         style:
-                            TextStyle(color: white(), fontSize: mheight! / 55),
+                            TextStyle(color: white, fontSize: mheight! / 55),
                       ),
                     ],
                   ),
@@ -69,13 +69,13 @@ class MiddleCard extends StatelessWidget {
                       Icon(
                         icon2,
                         size: mheight! / 28,
-                        color: white(),
+                        color: white,
                       ),
                       kheight,
                       Text(
                         title2,
                         style:
-                            TextStyle(color: white(), fontSize: mheight! / 55),
+                            TextStyle(color: white, fontSize: mheight! / 55),
                       ),
                     ],
                   ),
@@ -84,13 +84,13 @@ class MiddleCard extends StatelessWidget {
                       Icon(
                         icon3,
                         size: mheight! / 28,
-                        color: white(),
+                        color: white,
                       ),
                       kheight,
                       Text(
                         title3,
                         style:
-                            TextStyle(color: white(), fontSize: mheight! / 55),
+                            TextStyle(color: white, fontSize: mheight! / 55),
                       ),
                     ],
                   )

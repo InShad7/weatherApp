@@ -5,7 +5,7 @@ getIcon(val) {
     case 'Partly cloudy':
       return Icons.wb_cloudy;
     case 'Clear':
-    case 'sunny':
+    case 'Sunny':
       return Icons.wb_sunny;
     case 'Mist':
     case 'Fog':
@@ -43,6 +43,6 @@ getIcon(val) {
     case 'Moderate rain':
       return Icons.thunderstorm_outlined;
     default:
-      return Icons.error_outline;
+      return Icons.cloud_outlined;
   }
 }

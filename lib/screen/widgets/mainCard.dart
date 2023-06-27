@@ -1,8 +1,7 @@
 // import 'dart:math';
 import 'dart:ui';
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/screen/home.dart';
+import 'package:weatherapp/controller/controller.dart';
 import 'package:weatherapp/utils/utils.dart';
 
 class MainCard extends StatelessWidget {
@@ -30,7 +29,7 @@ class MainCard extends StatelessWidget {
               top: mheight! / 90, left: mwidth! / 22, right: mwidth! / 22),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: mheight! / 3.4,
+            height: mheight! / 3.2,
             decoration: BoxDecoration(
               border: Border.all(color: whiteOp2(), width: 1.5),
               gradient: LinearGradient(
@@ -56,14 +55,14 @@ class MainCard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: mheight! / 33,
                                 fontWeight: FontWeight.w500,
-                                color: white(),
+                                color: white,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             Text(
                               country,
                               style: TextStyle(
-                                  fontSize: mheight! / 37, color: white()),
+                                  fontSize: mheight! / 37, color: white),
                             ),
                           ],
                         ),
@@ -73,7 +72,7 @@ class MainCard extends StatelessWidget {
                           child: Icon(
                             myIcon,
                             size: mheight! / 16,
-                            color: white(),
+                            color: white,
                           )
                           //  Image.asset('assets/images/mist.png'),
                           ),
@@ -89,7 +88,7 @@ class MainCard extends StatelessWidget {
                           style: TextStyle(
                               fontSize: mheight! / 11.7,
                               fontWeight: FontWeight.w500,
-                              color: white()),
+                              color: white),
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: mheight! / 70),
@@ -109,7 +108,7 @@ class MainCard extends StatelessWidget {
                   kheight,
                   Text(
                     condition,
-                    style: TextStyle(fontSize: mheight! / 46, color: white()),
+                    style: TextStyle(fontSize: mheight! / 46, color: white),
                   ),
                   kheight20,
                   Row(
@@ -117,16 +116,15 @@ class MainCard extends StatelessWidget {
                     children: [
                       Text(
                         date,
-                        style:
-                            TextStyle(fontSize: mheight! / 46, color: white()),
+                        style: TextStyle(fontSize: mheight! / 46, color: white),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 18.0),
                         child: Text(
                           isDay,
                           // DateFormat("hh:mm a ").format(date),
-                          style: TextStyle(
-                              fontSize: mheight! / 49, color: white()),
+                          style:
+                              TextStyle(fontSize: mheight! / 49, color: white),
                         ),
                       ),
                     ],
